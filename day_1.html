@@ -71,30 +71,11 @@
 
 <div style="float: bottom; background-color: black;">
    <br>
-<p class="text">
-<p id="demo">Let AJAX change this text.</p>
-<button class="button" style="float: right" onclick="loadDoc"><span>></span></button></p>
+<a href="demo.html"
+   <button class="button" style="float: right"><span>></span></button></p></a>
 </div>
 
-<script>
-function loadDoc() {
-  var xhttp;
-  if (window.XMLHttpRequest) {
-    // code for modern browsers
-    xhttp = new XMLHttpRequest();
-    } else {
-    // code for IE6, IE5
-    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "1.txt", true);
-  xhttp.send();
-}
-</script>
+
 
 </body>
 </html>
