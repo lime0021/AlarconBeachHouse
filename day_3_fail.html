@@ -376,7 +376,7 @@ font-family: VT323;
 </head>
 <body>
   <div class="parallax" style="background-image: url('images/failure.jpg');">
-    <audio width="150px" height="20" allow=”autoplay” autoplay="autoplay" src="audio/scary_sound.mp3" controls="controls">If stream does not start automatically press the play button
+    <audio autoplay><source src="audio/scary_sound.mp3" type="audio/mpeg">
     </audio >
     <audio controls autoplay loop>
   <source src="audio/suspense1.mp3" type="audio/mpeg">
@@ -699,7 +699,7 @@ font-family: VT323;
     </div>
 <div style="height: 190px; background-color: black">
     <br>
-  <p class="dialogue">
+  <p class="dialogue" style="text-align: center; font-size: 90px;>
 FAIL<br><br><br><br></p>
 </div>
 
@@ -707,10 +707,13 @@ FAIL<br><br><br><br></p>
   <div class="parallax" style="background-image: url('images/diana_room2_night.jpg');">
       
       <div id= "option2" class="container" style="background-color: black; width: 30%; text-align: center;">
-  <p class="text" style="text-align: center; color: red">You have failed. Click continue to restart the day.
+  <p class="text" style="text-align: center; color: red">You have failed. Click continue to restart the day or restart to play from the first day.
   </p>
-  <a href="day_3A1.html">
+  <a href="day_3_A.html">
     <p class="dialogue" style="text-align: center">CONTINUE<br><br></p>
+  </a>
+   <a href="day_1.html">
+    <p class="dialogue" style="text-align: center">RESTART<br><br></p>
   </a>
 </div>
 
