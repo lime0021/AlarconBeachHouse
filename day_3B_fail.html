@@ -1,1 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alarcon Beach House</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <style>
+    body,html {
+      height: 100%;
+    }
+
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  .button {
+  border-radius: 5px;
+  background-color: black;
+  border: none;
+  color: red;
+  text-align: center;
+  font-size: 50px; 
+  font-family: VT323;
+  padding: 5px;
+  width: 60px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.parallax {
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+  .warningtext {
+    background-color: black;
+    font-size: 35px; 
+    font-family: VT323;
+    text-align: center;
+    color: red;
+  }
+  .dialogue {
+    background-color: black;
+    font-size: 35px; 
+    font-family: VT323;
+    text-align: left;
+    color: white;
+  }
+
+  .text {
+    background-color: transparent;
+    color: white;
+    text-align: left;
+    font-size: 35px; 
+    font-family: VT323;
+
+  }
+  .chBtn{
+    background-color: black;
+  }
+/* The Modal (background) */
+.chModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.chModal-header {
+background-color: black;
+margin: auto;
+padding: 0; 
+border: 1px solid white;
+width: 60%;
+color: white;
+text-align: center;
+font-size: 180%;
+
+}
+/* Modal Content */
+.chModal-content {
+   background-color:black;
+  color: white;
+  font-family: VT323;
+  font-size: 130%;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 60%;
+  max-height: 100%;
+  overflow-y: auto;
+  
+}
+.chModal-title {
+background-color: black;
+margin: auto;
+padding: 0; 
+width: 60%;
+color: white;
+text-align: center;
+font-size: 180%;
+font-family: VT323;
+
+}
+/* The Close Button */
+.chClose {
+  color: #aaaaaa;
+  float: right;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.chClose:hover,
+.chClose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.mBtn {
+  background-color: black;
+}
+.mModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.mModal-header {
+background-color: black;
+margin: auto;
+padding: 0; 
+border: 1px solid white;
+width: 80%;
+color: white;
+text-align: center;
+font-size: 180%;
+
+}
+/* Modal Content */
+.mModal-content {
+   background-color:black;
+  color: white;
+  font-family: VT323;
+  font-size: 130%;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  max-height: 100%;
+  overflow-y: auto;
+  
+}
+.mModal-title {
+background-color: black;
+margin: auto;
+padding: 0; 
+width: 80%;
+color: white;
+text-align: center;
+font-size: 180%;
+font-family: VT323;
+
+}
+.mClose {
+  color: #aaaaaa;
+  float: right;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.mClose:hover,
+.mClose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.clBtn {
+  background-color: black;
+}
+.clModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.clModal-header {
+background-color: black;
+margin: auto;
+padding: 0; 
+border: 1px solid white;
+width: 60%;
+color: white;
+text-align: center;
+font-size: 180%;
+
+}
+/* Modal Content */
+.clModal-content {
+   background-color:black;
+  color: white;
+  font-family: VT323;
+  font-size: 130%;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 60%;
+  max-height: 100%;
+  overflow-y: auto;
+  
+}
+.clModal-title {
+background-color: black;
+margin: auto;
+padding: 0; 
+width: 60%;
+color: white;
+text-align: center;
+font-size: 180%;
+font-family: VT323;
+
+}
+.clClose {
+  color: #aaaaaa;
+  float: right;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.clClose:hover,
+.clClose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+  .chFlip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #f1f1f1;
+  perspective: 10000px;
+}
+
+.chFlip-box-inner {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.chFlip-box:hover .chFlip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.chFlip-box-front, .chFlip-box-back {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.chFlip-box-front {
+  background-color: transparent;
+  
+}
+
+.chFlip-box-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+}
+ .clFlip-box {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 10000px;
+}
+
+.clFlip-box-inner {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.clFlip-box:hover .clFlip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.clFlip-box-front, .clFlip-box-back {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.clFlip-box-front {
+  background-color: transparent;
+  
+}
+
+.clFlip-box-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+  </style>
+</head>
+<body>
+  <div class="parallax" style="background-image: url('images/failure.jpg');">
+    <audio autoplay><source src="audio/scary_sound.mp3" type="audio/mpeg">
+    </audio >
+    <audio controls autoplay loop>
+  <source src="audio/suspense1.mp3" type="audio/mpeg">
+</audio>
+    </div>
+<div style="height: 190px; background-color: black">
+    <br>
+  <p class="dialogue" style="text-align: center; font-size: 90px;>
+FAIL<br><br><br><br></p>
+</div>
+  <div class="parallax" style="background-image: url('images/diana_room2_night.jpg');">
+      
+      <div id= "option2" class="container" style="background-color: black; width: 30%; text-align: center;">
+  <p class="text" style="text-align: center; color: red">You have failed. Click continue to restart the day or restart to play from the first day.
+  </p>
+  <a href="day_3_B.html">
+    <p class="dialogue" style="text-align: center">CONTINUE<br><br></p>
+  </a>
+   <a href="day_1.html">
+    <p class="dialogue" style="text-align: center">RESTART<br><br></p>
+  </a>
+</div>
+
+
+    <script>
+
+// Get the modal
+var chModal = document.getElementById("characterModal");
+// Get the button that opens the modal
+var chBtn = document.getElementById("charBtn");
+
+// Get the <span> element that closes the modal
+var chSpan = document.getElementsByClassName("chClose")[0];
+
+// When the user clicks the button, open the modal 
+chBtn.onclick = function() {
+  chModal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+chSpan.onclick = function() {
+  chModal.style.display = "none"; 
+}
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == chModal) {
+    chModal.style.display = "none";
+  }
+  if (event.target == mModal) {
+    mModal.style.display = "none";
+  }
+  if (event.target == clModal) {
+    clModal.style.display = "none";
+  }
+}
+
+var mModal = document.getElementById("mapModal");
+// Get the button that opens the modal
+var mBtn = document.getElementById("mapBtn");
+
+// Get the <span> element that closes the modal
+var mSpan = document.getElementsByClassName("mClose")[0];
+
+// When the user clicks the button, open the modal 
+mBtn.onclick = function() {
+  mModal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+mSpan.onclick = function() {
+  mModal.style.display = "none"; 
+}
+
+
+// When the user clicks anywhere outside of the modal, close it
+
+var clModal = document.getElementById("clueModal");
+// Get the button that opens the modal
+var clBtn = document.getElementById("clueBtn");
+
+// Get the <span> element that closes the modal
+var clSpan = document.getElementsByClassName("clClose")[0];
+
+// When the user clicks the button, open the modal 
+clBtn.onclick = function() {
+  clModal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+clSpan.onclick = function() {
+  clModal.style.display = "none"; 
+}
+
+
+// When the user clicks anywhere outside of the modal, close it
+
+</script>
+
+</body>
+</html>
+© 2020 GitHub, Inc.
