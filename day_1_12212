@@ -618,7 +618,7 @@ font-family: VT323;
                   <div class="chFlip-box-front">
                     <img src="images/emilio.jpg" style="width: 66%"><br><p class="text" style="text-align: center;">Emilio</p>
                   </div>
-                  <div class="chFlip-box-back"><p class="text" style="text-align: center; font-size: 30px"> Emilio A: A high school student at Gueniver Prep.</p></div>
+                  <div class="chFlip-box-back"><p class="text" style="text-align: center; font-size: 30px"> Emilio A: A high school student at Gueniver Prep. He is an only child.</p></div>
               </div>
             </div>
           </div>
