@@ -1069,10 +1069,10 @@ Emilio: "Now what?" <br><br><br><br></p>
       
       <div id= "option4" class="container" style="background-color: black; width: 30%; text-align: center;">
   <p class="text" style="text-align: center">Options:</p>
-  <a href="day_1_1121.html" id="opt2_1">
+  <a href="day_1_121.html" id="opt2_1">
     <p class="dialogue" style="text-align: center">"We could wait in the dining room."<br><br></p>
   </a>
-  <a href="day_1_1122.html" id="opt2_2">
+  <a href="day_1_122.html" id="opt2_2">
     <p class="dialogue" style="text-align: center">"Let's go for a swim."<br><br></p>
   </a>
   </a>
