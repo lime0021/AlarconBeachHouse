@@ -971,10 +971,10 @@ Jack: "It's too dangerous, Emilio." <br><br><br><br></p>
       <div id= "option2" class="container" style="background-color: black; width: 30%; text-align: center;">
   <p class="text" style="text-align: center">Options:</p>
   <a href="day_1_1211.html" id="opt2_1">
-    <p class="dialogue" style="text-align: center">Join Emilio.<br><br></p>
+    <p class="dialogue" style="text-align: center">"I think I'll stay."<br><br></p>
   </a>
   <a href="day_1_1212.html" id="opt2_2">
-    <p class="dialogue" style="text-align: center">Sit with Marcus and Lyla on the porch<br><br></p>
+    <p class="dialogue" style="text-align: center">"We should both stay."<br><br></p>
   </a>
   </a>
 </div>
