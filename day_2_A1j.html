@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alarcon Beach House</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body,html {
+      height: 100%;
+    }
+
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  .button {
+  border-radius: 5px;
+  background-color: black;
+  border: none;
+  color: red;
+  text-align: center;
+  font-size: 50px; 
+  font-family: VT323;
+  padding: 5px;
+  width: 60px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.parallax {
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+  .warningtext {
+    background-color: black;
+    font-size: 35px; 
+    font-family: VT323;
+    text-align: center;
+    color: red;
+  }
+  .dialogue {
+    background-color: black;
+    font-size: 35px; 
+    font-family: VT323;
+    text-align: left;
+    color: white;
+  }
+
+  .text {
+    background-color: transparent;
+    color: white;
+    text-align: left;
+    font-size: 35px; 
+    font-family: VT323;
+
+  }
+  .chBtn{
+    background-color: black;
+  }
+/* The Modal (background) */
+.chModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.chModal-header {
+background-color: black;
+margin: auto;
+padding: 0; 
+border: 1px solid white;
+width: 60%;
+color: white;
+text-align: center;
+font-size: 180%;
+
+}
+/* Modal Content */
+.chModal-content {
+   background-color:black;
+  color: white;
+  font-family: VT323;
+  font-size: 130%;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 60%;
+  max-height: 100%;
+  overflow-y: auto;
+  
+}
+.chModal-title {
+background-color: black;
+margin: auto;
+padding: 0; 
+width: 60%;
+color: white;
+text-align: center;
+font-size: 180%;
+font-family: VT323;
+
+}
+/* The Close Button */
+.chClose {
+  color: #aaaaaa;
+  float: right;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.chClose:hover,
+.chClose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.mBtn {
+  background-color: black;
+}
+.mModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.mModal-header {
+background-color: black;
+margin: auto;
+padding: 0; 
+border: 1px solid white;
+width: 80%;
+color: white;
+text-align: center;
+font-size: 180%;
+
+}
+/* Modal Content */
+.mModal-content {
+   background-color:black;
+  color: white;
+  font-family: VT323;
+  font-size: 130%;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  max-height: 100%;
+  overflow-y: auto;
+  
+}
+.mModal-title {
+background-color: black;
+margin: auto;
+padding: 0; 
+width: 80%;
+color: white;
+text-align: center;
+font-size: 180%;
+font-family: VT323;
+
+}
+.mClose {
+  color: #aaaaaa;
+  float: right;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.mClose:hover,
+.mClose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.clBtn {
+  background-color: black;
+}
+.clModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.clModal-header {
+background-color: black;
+margin: auto;
+padding: 0; 
+border: 1px solid white;
+width: 60%;
+color: white;
+text-align: center;
+font-size: 180%;
+
+}
+/* Modal Content */
+.clModal-content {
+   background-color:black;
+  color: white;
+  font-family: VT323;
+  font-size: 130%;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 60%;
+  max-height: 100%;
+  overflow-y: auto;
+  
+}
+.clModal-title {
+background-color: black;
+margin: auto;
+padding: 0; 
+width: 60%;
+color: white;
+text-align: center;
+font-size: 180%;
+font-family: VT323;
+
+}
+.clClose {
+  color: #aaaaaa;
+  float: right;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.clClose:hover,
+.clClose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+  .chFlip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #f1f1f1;
+  perspective: 10000px;
+}
+
+.chFlip-box-inner {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.chFlip-box:hover .chFlip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.chFlip-box-front, .chFlip-box-back {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.chFlip-box-front {
+  background-color: transparent;
+  
+}
+
+.chFlip-box-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+}
+ .clFlip-box {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 10000px;
+}
+
+.clFlip-box-inner {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.clFlip-box:hover .clFlip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.clFlip-box-front, .clFlip-box-back {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.clFlip-box-front {
+  background-color: transparent;
+  
+}
+
+.clFlip-box-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+  </style>
+</head>
+<body>
+  <div class="parallax" style="background-image: url('images/study1_night.jpg');">
+    <audio controls autoplay loop>
+  <source src="audio/slow_suspense.mp3" type="audio/mpeg">
+</audio>
+<div style="position: fixed; right: 0; top: 0">
+  <nav class="navbar bg-dark sticky-top">
+  <ul class="navbar-nav">
+<li class="nav-item">
+      <button id="mapBtn" type="button" class="mBtn mBtn-basic" data-toggle="mModal" data-target="#mapModal">
+   <img src="images/map_icon.jpg" alt="map" width="60">
+  </button>
+
+  <!-- The Modal -->
+  <div id="mapModal" class="mModal">
+        <!-- Modal Header -->
+        <div class="mModal-header">
+          <h4 class="mModal-title">Map<mSpan class="mClose">&times;</mSpan></h4>
+          
+        </div>
+        <!-- Modal content -->
+        <div class="mModal-content">
+          <img src="images/map.jpg" alt="map" style="width:100%">
+        </div>
+      </div>
+  </li>
+    <li class="nav-item">
+      <button id="clueBtn" type="button" class="clBtn clBtn-basic" data-toggle="clModal" data-target="#clueModal">
+   <img src="images/clues_icon.jpg" alt="clues" width="60">
+  </button>
+  <div id="clueModal" class="clModal">
+    <div class="chModal-header">
+      <h4 class="chModal-title">Clues<clSpan class="clClose">&times;</clSpan> </h4>
+    </div>
+    <div class="clModal-content">
+      <div class="container" style="margin-top: 30px; margin-bottom: 100px; text-align: center;">
+        <div class="row justify-content-center">
+          <div class="row">
+            <div class="col-md-3 justify-content-center">
+              <div class="container" style="width: 100%;">
+                <div class="clFlip-box">
+                  <div class="clFlip-box-inner">
+                    <div class="clFlip-box-front">
+                      <img src="images/welcome_sign_clickable.jpg" style="width: 80%">
+                    </div>
+                    <div class="clFlip-box-back">Day 1: clue 1 
+                      <br>
+                      <br>
+                    This welcome sign seems suspicious. Why is a part scratched out?</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          <div class="col-md-3 justify-content-center">
+              <div class="container" style="width: 100%;">
+                <div class="clFlip-box">
+                  <div class="clFlip-box-inner">
+                    <div class="clFlip-box-front">
+                      <img src="images/clue_not_found.jpg" style="width: 80%">
+                    </div>
+                    <div class="clFlip-box-back">Day 1: clue 2 not found</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 justify-content-center">
+              <div class="container" style="width: 100%;">
+                <div class="clFlip-box">
+                  <div class="clFlip-box-inner">
+                    <div class="clFlip-box-front">
+                      <img src="images/clue_not_found.jpg" style="width: 80%">
+                    </div>
+                    <div class="clFlip-box-back">Day 2: clue 3 not found
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 justify-content-center">
+              <div class="container" style="width: 100%;">
+                <div class="clFlip-box">
+                  <div class="clFlip-box-inner">
+                    <div class="clFlip-box-front">
+                      <img src="images/clue_not_found.jpg" style="width: 80%">
+                    </div>
+                    <div class="clFlip-box-back">Day 3: clue 4 not found</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 justify-content-center">
+              <div class="container" style="width: 100%;">
+                <div class="clFlip-box">
+                  <div class="clFlip-box-inner">
+                    <div class="clFlip-box-front">
+                      <img src="images/clue_not_found.jpg" style="width: 80%">
+                    </div>
+                    <div class="clFlip-box-back">Day 3: clue 5 not found</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 justify-content-center">
+              <div class="container" style="width: 100%;">
+                <div class="clFlip-box">
+                  <div class="clFlip-box-inner">
+                    <div class="clFlip-box-front">
+                      <img src="images/clue_not_found.jpg" style="width: 80%">
+                    </div>
+                    <div class="clFlip-box-back">Day 4: clue 6 not found</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 justify-content-center">
+              <div class="container" style="width: 100%;">
+                <div class="clFlip-box">
+                  <div class="clFlip-box-inner">
+                    <div class="clFlip-box-front">
+                      <img src="images/clue_not_found.jpg" style="width: 80%">
+                    </div>
+                    <div class="clFlip-box-back">Day 4: clue 7 not found</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 justify-content-center">
+              <div class="container" style="width: 100%;">
+                <div class="clFlip-box">
+                  <div class="clFlip-box-inner">
+                    <div class="clFlip-box-front">
+                      <img src="images/clue_not_found.jpg" style="width: 80%">
+                    </div>
+                    <div class="clFlip-box-back">Day 5: clue 8 not found</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 justify-content-center">
+              <div class="container" style="width: 100%;">
+                <div class="clFlip-box">
+                  <div class="clFlip-box-inner">
+                    <div class="clFlip-box-front">
+                      <img src="images/clue_not_found.jpg" style="width: 80%">
+                    </div>
+                    <div class="clFlip-box-back">Day 5: clue 9 not found</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 justify-content-center">
+              <div class="container" style="width: 100%;">
+                <div class="clFlip-box">
+                  <div class="clFlip-box-inner">
+                    <div class="clFlip-box-front">
+                      <img src="images/clue_not_found.jpg" style="width: 80%">
+                    </div>
+                    <div class="clFlip-box-back">Day 5: clue 10 not found</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 justify-content-center">
+              <div class="container" style="width: 100%;">
+                <div class="clFlip-box">
+                  <div class="clFlip-box-inner">
+                    <div class="clFlip-box-front">
+                      <img src="images/clue_not_found.jpg" style="width: 80%">
+                    </div>
+                    <div class="clFlip-box-back">Day 5: clue 11 not found</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 justify-content-center">
+              <div class="container" style="width: 100%;">
+                <div class="clFlip-box">
+                  <div class="clFlip-box-inner">
+                    <div class="clFlip-box-front">
+                      <img src="images/clue_not_found.jpg" style="width: 80%">
+                    </div>
+                    <div class="clFlip-box-back">Day 6: clue 12 not found</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+    </li>
+<li class="nav-item">
+<!-- Trigger/Open The Modal -->
+<button id="charBtn" type="button" class="chBtn chBtn-basic" data-toggle="chModal" data-target="#characterModal">
+   <img src="images/character_icon.jpg" alt="characters" width="60">
+  </button>
+
+<!-- The Modal -->
+<div id="characterModal" class="chModal">
+<div class="chModel-header">
+  <h4 class="chModal-title">Characters<chSpan class="chClose">&times;</chSpan></h4>
+    
+    </div>
+  <!-- Modal content -->
+  <div class="chModal-content">
+    <div class="container" style="margin-top:30px; margin-bottom: 120px;">
+              <div class="row justify-content-center">
+                <div class="row">
+          <div class="col-md-6 justify-content-center">
+
+            <div class="container" style= "width: 100%;">
+              <div class="chFlip-box">
+                <div class="chFlip-box-inner">
+                  <div class="chFlip-box-front">
+                    <img src="images/diana.jpg" style="width: 66%"><p class="text" style="text-align: center;">Diana</p>
+                  </div>
+                  <div class="chFlip-box-back"><p class="text" style="text-align: center; font-size: 30px"> Diana A: A high school student at Gueniver Prep. Curious and introverted.</p></div>
+              </div>
+            </div>
+          </div>
+           </div>
+            <div class="col-md-6 justify-content-center">
+            <div class="container"  style= "width: 100%;">
+              <div class="chFlip-box">
+                <div class="chFlip-box-inner">
+                  <div class="chFlip-box-front">
+                    <img src="images/emilio.jpg" style="width: 66%"><br><p class="text" style="text-align: center;">Emilio</p>
+                  </div>
+                  <div class="chFlip-box-back"><p class="text" style="text-align: center; font-size: 30px"> Emilio A: A high school student at Gueniver Prep. He is an only child.</p></div>
+              </div>
+            </div>
+          </div>
+           </div>
+            <div class="col-md-4 justify-content-center">
+            <div class="container"  style= "width: 100%;">
+              <div class="chFlip-box">
+                <div class="chFlip-box-inner">
+                  <div class="chFlip-box-front">
+                    <img src="images/fiona.jpg" style="width: 66%"><br><p class="text" style="text-align: center;">Fiona</p>
+                  </div>
+                  <div class="chFlip-box-back"><p class="text" style="text-align: center; font-size: 30px"> Fiona Y: Stranger to Diana. Jack's younger sister.</p></div>
+              </div>
+            </div>
+          </div>
+           </div>
+           <div class="col-md-4 justify-content-center">
+            <div class="container"  style= "width: 100%;">
+              <div class="chFlip-box">
+                <div class="chFlip-box-inner">
+                  <div class="chFlip-box-front">
+                    <img src="images/marcus.jpg" style="width: 66%"><br><p class="text" style="text-align: center;">Marcus</p>
+                  </div>
+                  <div class="chFlip-box-back"><p class="text" style="text-align: center; font-size: 30px"> Marcus L: A high school student at Gueniver Prep.</p></div>
+              </div>
+            </div>
+          </div>
+           </div>
+            <div class="col-md-4 justify-content-center">
+            <div class="container"  style= "width: 100%;">
+              <div class="chFlip-box">
+                <div class="chFlip-box-inner">
+                  <div class="chFlip-box-front">
+                    <img src="images/jack.jpg" style="width: 66%"><br><p class="text" style="text-align: center;">Jack</p>
+                  </div>
+                  <div class="chFlip-box-back"><p class="text" style="text-align: center; font-size: 30px"> Jack Y: An english teacher at Gueniver Prep.</p></div>
+              </div>
+            </div>
+          </div>
+           </div>
+            <div class="col-md-6 justify-content-center">
+            <div class="container"  style= "width: 100%;">
+              <div class="chFlip-box">
+                <div class="chFlip-box-inner">
+                  <div class="chFlip-box-front">
+                    <img src="images/lyla.jpg" style="width: 66%"><br><p class="text" style="text-align: center;">Lyla</p>
+                  </div>
+                  <div class="chFlip-box-back"><p class="text" style="text-align: center; font-size: 30px"> Lyla E: A high school student at Gueniver prep. She is a heavy sleeper.</p></div>
+              </div>
+            </div>
+          </div>
+           </div>
+            <div class="col-md-6 justify-content-center">
+            <div class="container"  style= "width: 100%;">
+              <div class="chFlip-box">
+                <div class="chFlip-box-inner">
+                  <div class="chFlip-box-front">
+                    <img src="images/marian.jpg" style="width: 66%"><br><p class="text" style="text-align: center;">Marian</p>
+                  </div>
+                  <div class="chFlip-box-back"><p class="text" style="text-align: center; font-size: 30px"> Marian R: Unknown.</p></div>
+              </div>
+            </div>
+          </div>
+           </div>
+            </div>
+            </div>
+            </div> 
+            </div>
+            </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+<div style="height: 190px; background-color: black">
+    <br>
+  <p class="dialogue">
+Diana chose to explore Jack and Fiona's room.<br><br><br><br></p>
+</div>
+
+  <div class="parallax" style="background-image: url('images/upstairs_hallway.jpg');">
+      </div>
+      <div style="height: 190px; background-color: black">
+    <br>
+  <p class="dialogue">
+Diana made her way across the hallway to the bedroom. <br><br><br><br></p>
+</div>
+
+<div class="parallax" style="background-image: url('images/upstairs_hallway.jpg');">
+      </div>
+      <div style="height: 190px; background-color: black">
+    <br>
+  <p class="dialogue">
+The door was closed and Diana didn't want to attempt to open it. She did not find any clues. <br><br><br></p>
+</div>
+
+
+  <div class="parallax" style="background-image: url('images/diana_room2_night.jpg');">
+      
+      <div id= "option2" class="container" style="background-color: black; width: 30%; text-align: center;">
+  <p class="text" style="text-align: center">You have completed day 2.</p>
+  <a href="day_3_B.html">
+    <p class="dialogue" style="text-align: center">Continue to Day 3<br><br></p>
+  </a>
+</div>
+
+
+    <script>
+
+// Get the modal
+var chModal = document.getElementById("characterModal");
+// Get the button that opens the modal
+var chBtn = document.getElementById("charBtn");
+
+// Get the <span> element that closes the modal
+var chSpan = document.getElementsByClassName("chClose")[0];
+
+// When the user clicks the button, open the modal 
+chBtn.onclick = function() {
+  chModal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+chSpan.onclick = function() {
+  chModal.style.display = "none"; 
+}
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == chModal) {
+    chModal.style.display = "none";
+  }
+  if (event.target == mModal) {
+    mModal.style.display = "none";
+  }
+  if (event.target == clModal) {
+    clModal.style.display = "none";
+  }
+}
+
+var mModal = document.getElementById("mapModal");
+// Get the button that opens the modal
+var mBtn = document.getElementById("mapBtn");
+
+// Get the <span> element that closes the modal
+var mSpan = document.getElementsByClassName("mClose")[0];
+
+// When the user clicks the button, open the modal 
+mBtn.onclick = function() {
+  mModal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+mSpan.onclick = function() {
+  mModal.style.display = "none"; 
+}
+
+
+// When the user clicks anywhere outside of the modal, close it
+
+var clModal = document.getElementById("clueModal");
+// Get the button that opens the modal
+var clBtn = document.getElementById("clueBtn");
+
+// Get the <span> element that closes the modal
+var clSpan = document.getElementsByClassName("clClose")[0];
+
+// When the user clicks the button, open the modal 
+clBtn.onclick = function() {
+  clModal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+clSpan.onclick = function() {
+  clModal.style.display = "none"; 
+}
+
+
+// When the user clicks anywhere outside of the modal, close it
+
+</script>
+
+</body>
+</html>
